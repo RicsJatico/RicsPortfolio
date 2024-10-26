@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - My Portfolio</title>
+    <style>
+        /* Dark Theme */
+        body {
+            background: url('bg3.jpg') no-repeat center center fixed; /* Replace with your image URL */
+            background-size: cover;
+            background-color: #121212;
+            color: #99919193;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: opacity 1s ease-in-out; /* Smooth fade effect */
+            opacity: 0; /* Start hidden for the fade effect */
+        }
+        body.loaded {
+            opacity: 1; /* Fade in effect */
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Space between logo and links */
+            align-items: center;
+            background-color: #1f1f1f27; /* Adjust this to match your index.html */
+            padding: 10px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            justify-content: center; /* Center the nav items */
+            flex: 1; /* Make the nav-links take available space */
+        }
+
+        .nav-links li {
+            margin: 0 20px; /* Adjust margins for spacing */
+        }
+
+        .nav-links a {
+            color: #fdf9f9; /* Text color */
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #333;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgb(250, 250, 250);
+        }
+        .navbar .logo {
+            position: absolute;
+            top: 2px; /* Adjust as needed */
+            left: 40px; /* Adjust as needed */
+        }
+
+        .navbar .logo img {
+            height: 75px; /* Adjust for desired size */
+        }
+        /* Projects Section */
+        .projects {
+            padding: 100px 50px;
+        }
+
+        .projects h2 {
+            font-size: 36px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .project-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        .project-card {
+            background-color: #1f1f1f6b;
+            border-radius: 10px;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px; /* Add spacing between cards */
+            display: flex; /* Flex container for centering */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+        }
+
+        .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .project-card h3 {
+            color: #e0e0e0;
+            margin-top: 15px;
+            text-align: center; /* Center title */
+        }
+
+        .project-card p 
+        {
+            color: #cfcfcf;
+            margin-bottom: 20px;
+            text-align: center; /* Center description */
+        }
+
+        .btn {
+            background-color: #3a3a3a;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin-top: auto; /* Push button to the bottom */
+        }
+
+        .btn:hover {
+            background-color: #4a4a4a;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            text-align: center;
+            color: #e0e0e0;
+        }
+
+        footer a {
+            color: #e0e0e0;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s, box-shadow 0.3s;
+        }
+
+        footer a:hover {
+            color: #999;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .arrow-btn {
+            position: fixed; /* Fixed position to stay in view */
+            right: 20px; /* Align to the right */
+            bottom: 20px; /* Align to the bottom */
+            background-color: rgba(99, 96, 96, 0.699); /* Button background color */
+            color: #fff; /* Text color */
+            border: none;
+            border-radius: 50%; /* Round button */
+            width: 60px; /* Button width */
+            height: 60px; /* Button height */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.534);
+        }
+
+        .arrow-btn:hover {
+            background-color: #ff0808; /* Darker red on hover */
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+
+        .arrow-btn:before {
+            content: '➡'; /* Right arrow */
+            font-size: 24px; /* Font size */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="logo3.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-container">
+            <div class="project-card">
+                <img src="p1.png" alt="Project 1">
+                <h3>TOURISM SERVICES (Main Developer) </h3>
+                <p>The primary goal of developing the Tourism Information System application is to assist customers in selecting appealing destinations and to offer top-notch travel services. This system aids tour operators by effectively managing their customers, hotels, vehicles, and agents, simplifying and streamlining all operations of the tour company.</p>
+                <a href="https://ricsjatico.github.io/Travel-website/" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="p3.png" alt="Project 2">
+                <h3>PASSPORT TRACKING SYSTEM (Co Developer)</h3>
+                <p>Passport tracking system provides real-time updates on your passport application status. Whether you're applying for a new passport or renewing an existing one, our system is designed to keep you informed every step of the way. From the moment your application is received, you can track its progress with ease, ensuring peace of mind as you plan your travels.</p>
+                <a href="https://kimberly-16.github.io/Kimberly/" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="" alt="Project 3">
+                <h3></h3>
+                <p></p>
+                <a href="https://ricsjatico.github.io/Login-Website/" class="btn">View Project</a>
+            </div>
+        </div>
+    </section>
+    <button class="arrow-btn" onclick="goToSkills()"></button>
+    <script>  window.onload = function() {
+        document.body.classList.add('loaded');
+    };
+
+    function goToSkills() {
+                window.location.href = "skills.html"; // Redirect to projects page
+            }
+        
+        </script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 RicsJatico. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+</html>

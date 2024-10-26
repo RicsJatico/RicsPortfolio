@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - My Portfolio</title>
+    <style>
+       body {
+            background: url('bg3.jpg') no-repeat center center fixed; /* Replace with your image URL */
+            background-size: cover;
+            background-color: #121212;
+            color: #99919193;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: opacity 1s ease-in-out; /* Smooth fade effect */
+            opacity: 0; /* Start hidden for the fade effect */
+        }
+        body.loaded {
+            opacity: 1; /* Fade in effect */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f1f1f27;
+            padding: 10px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            color: #fdf9f9;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #333;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgb(250, 250, 250);
+        }
+        .navbar .logo {
+            position: absolute;
+            top: 2px; /* Adjust as needed */
+            left: 40px; /* Adjust as needed */
+        }
+
+        .navbar .logo img {
+            height: 75px; /* Adjust for desired size */
+        }
+        .skills {
+            padding: 50px;
+            text-align: center;
+            margin-top: 0px;
+        }
+
+        .skills h2 {
+            font-size: 36px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+        }
+
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .skill-item {
+            background-color: #1f1f1f54;
+            border-radius: 10px;
+            padding: 20px 30px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            padding: 20px 0;
+            text-align: center;
+            color: #e0e0e0;
+        }
+
+        footer a {
+            color: #e0e0e0;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s, box-shadow 0.3s;
+        }
+
+        footer a:hover {
+            color: #999;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .arrow-btn {
+            position: fixed; /* Fixed position to stay in view */
+            right: 20px; /* Align to the right */
+            bottom: 20px; /* Align to the bottom */
+            background-color: rgba(99, 96, 96, 0.699); /* Button background color */
+            color: #fff; /* Text color */
+            border: none;
+            border-radius: 50%; /* Round button */
+            width: 60px; /* Button width */
+            height: 60px; /* Button height */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.534);
+        }
+
+        .arrow-btn:hover {
+            background-color: #ff0808; /* Darker red on hover */
+            transform: scale(1.1); /* Scale effect on hover */
+        }
+
+        .arrow-btn:before {
+            content: '➡'; /* Right arrow */
+            font-size: 24px; /* Font size */
+        }
+   
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="logo3.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <h3>HTML5</h3>
+                <p>Specializing in HTML5, I have experience in creating structured, accessible, and SEO-friendly markup for a range of web applications.</p>
+            </div>
+            <div class="skill-item">
+                <h3>CSS3</h3>
+                <p>With a focus on responsive design, I use CSS3 to build modern, engaging interfaces that work smoothly across devices.</p>
+            </div>
+            <div class="skill-item">
+                <h3>JavaScript</h3>
+                <p>Using JavaScript, I build interactive features and dynamic functionality, bringing websites to life with smooth, user-friendly experiences.</p>
+            </div>
+        </div>
+    </section>
+    <button class="arrow-btn" onclick="goToContact()"></button>
+    <script>
+        window.onload = function() {
+            document.body.classList.add('loaded');
+        };
+
+        function goToContact() {
+                window.location.href = "contact.html"; // Redirect to projects page
+            }
+        
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 RicsJatico. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+</body>
+</html>
